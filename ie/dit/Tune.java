@@ -34,7 +34,7 @@ public class Tune
 		 public String toString()
 		{
         StringBuffer sb = new StringBuffer();
-        for(String tune:hnj0)
+        for(String tune:tunes)
         {
             sb.append(tune + ", ");
         }
@@ -75,8 +75,16 @@ class TuneBook
                     e.printStackTrace();
                 }
             }
-	
-	
+		}
 	}
-}
+	
+	public static void main(String[] args)
+    {
+        TuneBook tb = new TuneBook("hnj0.abc");
+        System.out.println(tb);
+
+        Tune t = tb.findTune("Scotsman over the Border");
+        t.play();
+    }
+	
 }
